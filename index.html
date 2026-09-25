@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>风景页面</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; font-family: "Segoe UI", "PingFang SC", sans-serif; }
+    body {
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom, rgba(10, 18, 40, .15), rgba(10, 18, 40, .45)),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      color: #fff;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.15), transparent 35%),
+        linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.35));
+      backdrop-filter: blur(1px);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(760px, 92vw);
+      padding: 40px 28px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 28px;
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,.28);
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 6vw, 4.6rem);
+      letter-spacing: .06em;
+      text-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 620px;
+      font-size: 1.08rem;
+      line-height: 1.9;
+      color: rgba(255,255,255,.9);
+    }
+
+    .btns {
+      margin-top: 26px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.26);
+      background: rgba(255,255,255,.12);
+      transition: .25s ease;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.22);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 18px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: .92rem;
+      color: rgba(255,255,255,.8);
+    }
+
+    .sun {
+      position: absolute;
+      top: 10%;
+      right: 12%;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,245,180,.95), rgba(255,220,120,.55), transparent 70%);
+      filter: blur(1px);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="sun"></div>
+
+  <main class="content">
+    <section class="card">
+      <h1>山河湖海</h1>
+      <p>
+        风吹过山谷，云落进湖面，阳光在远处铺成一条金色的小路。
+        这是一个适合放风景图、旅行介绍或欢迎页的漂亮首页。
+      </p>
+      <div class="btns">
+        <a href="#view">欣赏风景</a>
+        <a href="#more">查看更多</a>
+      </div>
+    </section>
+
+    <div class="footer">愿你眼里有光，心中有景。</div>
+  </main>
+</body>
+</html>
